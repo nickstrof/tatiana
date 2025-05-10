@@ -1,0 +1,76 @@
+.footer {
+	background-color: var(--blue3);
+	margin-top: 4rem;
+}
+
+.footer .container {
+	padding: 3em 0 2em;
+	text-align: center;
+	z-index: 1;
+}
+.footer .pls-left img {
+	margin-inline: auto;
+	margin-bottom: 3rem;
+}
+.footer .pls-right {
+	color: var(--bg);
+	background-color: var(--accent-color);
+	padding: 4rem;
+}
+.footer .link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.footer .link a {
+	color: var(--bg);
+}
+.footer svg {
+	fill: var(--bg);
+}
+.footer .copyright {
+	display: block;
+	margin-top: 4.5em;
+	font-size: clamp(.75rem, 2vw, 1rem);
+	color: var(--lightblack);
+}
+@media only screen and (min-width: 768px) {
+	.footer .pls {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+	}
+}
+@media screen and (min-width: 1200px) {
+	.footer .container {
+		padding: 4em 0 3em;
+	}
+	.footer .list {
+		column-gap: 3em;
+		margin: 3em 0;
+	}
+	.footer .social-link {
+		column-gap: 2em;
+	}
+	.footer .copyright {
+		margin-top: 5em;
+	}
+}
+@media (any-hover: hover) {
+	.footer .link.mail a {
+		will-change: text-decoration, color;
+		transition: text-decoration .2s ease-in-out, color .2s ease-in-out;
+	}
+	.footer .social-link svg {
+		will-change: fill;
+		transition: fill .2s ease-in-out;
+	}
+
+	.footer .link.mail a:hover {
+		text-decoration: underline;
+		color: var(--blue3);
+	}
+	.footer .social-link svg:hover {
+		fill: var(--blue3);
+	}
+}

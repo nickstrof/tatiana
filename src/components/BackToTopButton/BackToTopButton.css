@@ -1,0 +1,24 @@
+.back-to-top {
+	display: none;
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    z-index: 3;
+    border: none;
+    outline: none;
+	background-color: var(--accent-color);
+	fill: var(--bg);
+    cursor: pointer;
+    padding: .5rem;
+    border-radius: 4px;
+}
+@media (any-hover: hover) {
+	.back-to-top {
+		will-change: background-color, fill;
+		transition: background-color .2s ease-in-out, fill .2s ease-in-out;
+	}
+	.back-to-top:hover {
+		background-color: hsl(207, 4%, 46%);
+		fill: var(--reverse-bg);
+	}
+}

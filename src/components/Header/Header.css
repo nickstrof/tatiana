@@ -1,0 +1,59 @@
+.header {
+	position: sticky;
+	inset: 0 0 auto;
+	height: var(--header);
+	background-color: var(--lightwhite);
+	will-change: background-color, box-shadow, backdrop-filter;
+	transition: background-color .5s ease, box-shadow .5s ease, backdrop-filter .5s ease;
+	z-index: 3;
+}
+.header.fixed {
+	background-color: color-mix(in srgb, var(--lightwhite) 90%, var(--transparent));
+	box-shadow: 0 0 10px color-mix(in srgb, var(--reverse-bg) 20%, var(--transparent));
+	backdrop-filter: blur(10px);
+}
+.header .container {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.header svg {
+	fill: var(--lightblack);
+	cursor: pointer;
+}
+.header .site {
+	position: absolute;
+	left: 0;
+	max-width: 25vw;
+}
+.header .site img {
+	max-height: calc(var(--header) - 19px);
+    padding: 5px;
+}
+.header .t-btns {
+	position: absolute;
+	right: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+	place-items: center;
+    gap: .25em;
+}
+.header .color-mode {
+	margin-left: clamp(5px, 1vw, 10px);
+}
+.header .site svg,
+.header .color-mode svg {
+	width: clamp(20px, 3vw, 30px);
+	height: clamp(20px, 3vw, 30px);
+}
+@media (any-hover: hover) {
+	.header .t-btns svg {
+		will-change: fill;
+		transition: fill .2s ease-in-out;
+	}
+	.header .t-btns svg:hover {
+		fill: var(--accent-color);
+	}
+}
